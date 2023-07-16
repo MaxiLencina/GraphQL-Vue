@@ -1,9 +1,10 @@
 <template>
-  <h1>Coments</h1>
+ <!--  <h1>Coments</h1>
 
   <div v-if="loading">Loading...</div>
 
 
+import Subscripciones from "./components/Subscripciones.vue";
   <div v-else>
     <ul>
       <li v-for="(comment, index) in result.getCommentsFromUser" :key="index">
@@ -17,14 +18,18 @@
   </div>
 
   <button @click="refetch()" >Refresh</button>
-  <MutationsComp />
+  <MutationsComp /> -->
+  <Subscripciones />
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script lang="ts" setup>
+import Subscripciones from './components/Subscripciones.vue';
+
+
+/* import { defineComponent } from "vue";
 import { useQuery, useLazyQuery } from "@vue/apollo-composable";
 import gql from "graphql-tag";
-import MutationsComp from "./components/MutationsComp.vue";
+//import MutationsComp from "./components/MutationsComp.vue";
 
 export default defineComponent({
     setup() {
@@ -65,8 +70,8 @@ export default defineComponent({
             refetch,
         };
     },
-    components: { MutationsComp }
-});
+    components: { Subscripciones }
+  }); */
 </script>
 <style>
 .error {
@@ -74,5 +79,4 @@ export default defineComponent({
 }
 </style>
 
-/* querys query { getAllComments { name text } } query($name: String!){
-getCommentsFromUser(name: $name) { name text } } */
+
